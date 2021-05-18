@@ -48,7 +48,7 @@ function App() {
               level={"H"}
               includeMargin={true}
               />
-            <h5>Capture your image</h5>
+            <h5>Capture image | Scan QR Code</h5>
             {source &&
               <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
                 <img src={source} alt={"snap"} className={classes.img}></img>
@@ -70,6 +70,7 @@ function App() {
                 <PhotoCameraRoundedIcon fontSize="large" color="primary" />
               </IconButton>
             </label>
+            <span> </span>
             <label htmlFor="icon-button-file">
               <IconButton
                 color="primary"
