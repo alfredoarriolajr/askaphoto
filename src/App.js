@@ -4,6 +4,8 @@ import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
+import CropFreeRoundedIcon from '@material-ui/icons/CropFreeRounded';
+import QRCode from "react-qr-code";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,6 +41,13 @@ function App() {
       <div className={classes.root}>
         <Grid container>
           <Grid item xs={12}>
+            <h1>Ask A Photo</h1>
+            <QRCode
+              value="123456"
+              size={290}
+              level={"H"}
+              includeMargin={true}
+              />
             <h5>Capture your image</h5>
             {source &&
               <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
@@ -59,6 +68,15 @@ function App() {
                 component="span"
               >
                 <PhotoCameraRoundedIcon fontSize="large" color="primary" />
+              </IconButton>
+            </label>
+            <label htmlFor="icon-button-file">
+              <IconButton
+                color="primary"
+                aria-label="upload picture"
+                component="span"
+              >
+                <CropFreeRoundedIcon fontSize="large" color="primary" />
               </IconButton>
             </label>
           </Grid>
