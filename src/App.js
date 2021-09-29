@@ -6,11 +6,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
 import CropFreeRoundedIcon from '@material-ui/icons/CropFreeRounded';
 import QRCode from "react-qr-code";
+import Mapp from './Map';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       height: "100%",
       textAlign: 'center',
+      backgroundColor: '#ebebe0',
     },
     imgBox: {
       maxWidth: "80%",
@@ -23,7 +25,13 @@ const useStyles = makeStyles((theme) => ({
     },
     input: {
       display: "none"
-    }
+    },
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+  },
 }));
 
 function App() {
@@ -48,6 +56,7 @@ function App() {
               level={"H"}
               includeMargin={true}
               />
+            <Mapp />
             <h5>Capture image | Scan QR Code</h5>
             {source &&
               <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
